@@ -1,0 +1,91 @@
+.certificates-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 32px;
+}
+
+.certificate-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(30, 34, 40, 0.10);
+    padding: 28px 24px 28px 24px;
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    border: 1.5px solid #e0e0e0;
+    align-items: stretch;
+    z-index: 1;
+    margin-bottom: 24px;
+    min-height: 300px;
+    max-width: 900px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.certificate-card h3 {
+    color: #f64e87;
+    margin: 0 0 8px 0;
+    font-size: 1.13rem;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    z-index: 2;
+}
+.certificate-card p {
+    color: #232526;
+    margin: 0 0 6px 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 400;
+    z-index: 2;
+}
+.certificate-link-btn {
+    color: #fff;
+    background: #f64e87;
+    padding: 8px 20px;
+    border-radius: 7px;
+    text-decoration: none;
+    align-self: flex-start;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(246, 78, 135, 0.10);
+    transition: background 0.16s, color 0.16s;
+    margin-top: 10px;
+    letter-spacing: 0.2px;
+    z-index: 2;
+    border: none;
+}
+.certificate-link-btn:hover {
+    background: #c13a6a;
+    color: #fffbe7;
+}
+
+.certificate-preview {
+    width: 420px;
+    min-width: 300px;
+    max-width: 450px;
+    height: 300px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background: #f7f7fa;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(30, 34, 40, 0.07);
+    margin-bottom: 0;
+    flex-shrink: 0;
+    align-self: center;
+}
+.certificate-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 0 1 320px;
+    max-width: 340px;
+    gap: 10px;
+}
+.courses-container h1 {
+    font-size: 2.8rem;
+    margin-bottom: 28px;
+    color: #ffffff;
+    text-align: center;
+    width: 100%;
+}

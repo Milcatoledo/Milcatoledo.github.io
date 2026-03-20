@@ -1,0 +1,94 @@
+.hero {
+    background: linear-gradient(135deg, #1b2847);
+    color: #dfdddd;
+    text-align: center;
+}
+
+.hero-content {
+    width: 100%;
+    margin: auto;
+}
+
+.hero img.foto-perfil {
+    width: 12%;
+    height: 12%;
+    border-radius: 100%;
+    border: 5px solid #f64e87;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #f64e87;
+}
+
+.hero h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: auto;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.botones-cta {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn-primario, .btn-secundario {
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-primario {
+    background: #f64e87;
+    color: #fff;
+}
+
+.btn-primario:hover {
+    color: #dedede;
+    background: #b84f72;
+}
+
+.btn-secundario {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.btn-secundario:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.redes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 2%;
+}
+.redes img {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 100%;
+    background: transparent;
+    border: none;
+}
+
+.sobre-mi {
+    padding: 60px 20px;
+}
