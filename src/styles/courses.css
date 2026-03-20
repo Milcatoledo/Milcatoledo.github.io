@@ -3,13 +3,15 @@
     flex-direction: column;
     gap: 32px;
     margin-top: 32px;
+    padding: 0 16px;
+    box-sizing: border-box;
 }
 
 .certificate-card {
     background: #fff;
     border-radius: 16px;
     box-shadow: 0 4px 24px rgba(30, 34, 40, 0.10);
-    padding: 28px 24px 28px 24px;
+    padding: 28px 24px;
     display: flex;
     flex-direction: row;
     gap: 32px;
@@ -22,6 +24,7 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    box-sizing: border-box;
 }
 .certificate-card h3 {
     color: #f64e87;
@@ -82,10 +85,61 @@
     max-width: 340px;
     gap: 10px;
 }
+.courses-container {
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    padding: 0;
+}
 .courses-container h1 {
     font-size: 2.8rem;
     margin-bottom: 28px;
     color: #ffffff;
     text-align: center;
     width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+/* ===== RESPONSIVE MOBILE ===== */
+@media (max-width: 768px) {
+    .courses-container h1 {
+        font-size: 1.8rem;
+        margin-bottom: 16px;
+    }
+
+    .certificate-card {
+        flex-direction: column;
+        padding: 18px 14px;
+        gap: 16px;
+        min-height: unset;
+        margin-bottom: 16px;
+    }
+
+    .certificate-preview {
+        width: 100%;
+        min-width: unset;
+        max-width: 100%;
+        height: 220px;
+    }
+
+    .certificate-card-content {
+        flex: unset;
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .courses-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .certificate-preview {
+        height: 180px;
+    }
+
+    .certificate-card {
+        padding: 14px 10px;
+    }
 }

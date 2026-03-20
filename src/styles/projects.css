@@ -82,3 +82,27 @@
     background: #c13a6a;
     color: #fffbe7;
 }
+
+/* ===== RESPONSIVE MOBILE ===== */
+@media (max-width: 768px) {
+    .project-container h1 {
+        font-size: 1.8rem;
+        margin-bottom: 16px;
+    }
+
+    .project-container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-container h1 {
+        font-size: 1.5rem;
+    }
+}

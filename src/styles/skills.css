@@ -135,27 +135,41 @@
 @media (max-width: 900px) {
     
     .skill-card {
-        max-width: 80%;
+        max-width: 95%;
         margin: 12px auto;
-        padding: 50px;
+        padding: 16px;
         flex-direction: column;
         align-items: center;
         height: auto;
-        gap: 20px;
-        margin-bottom: 50px;
+        gap: 16px;
+        margin-bottom: 24px;
     }
     
     .skill-image {
         width: 100%;
-        height: 100%;
+        height: 180px;
     }
     
     .skill-icons img {
-        width: 40px;
-        height: 40px;
+        width: 36px;
+        height: 36px;
     }
 
     .skill-descriptions li {
         font-size: 13px;
+    }
+
+    .title-section-skill {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skill-card {
+        padding: 12px;
+    }
+
+    .skill-image {
+        height: 150px;
     }
 }

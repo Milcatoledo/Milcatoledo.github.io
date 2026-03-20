@@ -10,11 +10,13 @@
 }
 
 .hero img.foto-perfil {
-    width: 12%;
-    height: 12%;
+    width: 130px;
+    height: 130px;
     border-radius: 100%;
     border: 5px solid #f64e87;
     box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+    object-fit: cover;
+    margin-bottom: 10px;
 }
 
 .hero h1 {
@@ -91,4 +93,65 @@
 
 .sobre-mi {
     padding: 60px 20px;
+}
+
+/* ===== RESPONSIVE MOBILE ===== */
+@media (max-width: 768px) {
+    .hero {
+        padding: 20px 16px 32px;
+    }
+
+    .hero img.foto-perfil {
+        width: 100px;
+        height: 100px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+        padding: 0 10px;
+    }
+
+    .hero h2 {
+        font-size: 1.05rem;
+        margin-bottom: 14px;
+        padding: 0 10px;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+        padding: 0 12px;
+        margin-bottom: 16px;
+    }
+
+    .botones-cta {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 0 16px;
+    }
+
+    .btn-primario, .btn-secundario {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .redes {
+        gap: 14px;
+        margin-bottom: 16px;
+    }
+
+    .redes img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero h2 {
+        font-size: 0.95rem;
+    }
 }
