@@ -1,5 +1,4 @@
 import '../styles/callToActionSection.css'
-import milcaPhoto from '../images/milca.png';
 import { SocialLink } from './socialLink.jsx';
 import { socialLinksData } from '../data/socialLinksData.jsx';
 
@@ -7,7 +6,7 @@ export function CallToAction() {
     return (
         <section className="hero">
             <div className="hero-content">
-                <img src={milcaPhoto} alt="Milca Toledo" className="foto-perfil" />
+                <img src="/images/milca.png" alt="Milca Toledo" className="foto-perfil" />
                 <h1>¡Hola! Soy <span>Milca Toledo</span></h1>
                 <h2>Desarrolladora de Software | Frontend & Backend</h2>
                 <p>
