@@ -1,6 +1,6 @@
 .hero {
     position: relative;
-    background: linear-gradient(135deg, #1b2847); 
+    background: #1b2847; 
     color: #dfdddd;
     text-align: center;
     overflow: hidden;
@@ -26,7 +26,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(27, 40, 71, 0.6);
+    /* Gradiente que empieza transparente arriba y termina en #171717 abajo para integrarse con el resto de la página */
+    background: linear-gradient(to bottom, rgba(27, 40, 71, 0.4) 0%, rgba(27, 40, 71, 0.8) 70%, #171717 100%);
     z-index: 1;
 }
 

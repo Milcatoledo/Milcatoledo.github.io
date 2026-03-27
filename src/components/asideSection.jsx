@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { profileData, skills } from '../data/asideSectionData.jsx';
-import '../styles/asideSection.css'; 
+import { profileData } from '../data/asideSectionData.jsx';
 
 export function AgeCalculator({ birthDate, className = "" }) {
     const [age, setAge] = useState(0);
@@ -29,40 +28,6 @@ export function AgeCalculator({ birthDate, className = "" }) {
     );
 }
 
-export function SkillBar({ skill, percentage }) {
-    return (
-        <div className="skill-item">
-            <div className="skill-header">
-                <span className="skill-name">{skill}</span>
-                <span className="skill-percentage">{percentage}%</span>
-            </div>
-            <div className="progress-bar-container">
-                <div 
-                    className="progress-bar"
-                    style={{ width: `${percentage}%` }}
-                ></div>
-            </div>
-        </div>
-    );
-}
-
-export function SkillsSection({ skills, title = "Domino de tecnologías" }) {
-    return (
-        <div className="skills-section">
-            {title && <h3 className="skills-title">{title}</h3>}
-            <div className="skills-list">
-                {skills.map((skill, index) => (
-                    <SkillBar
-                        key={index}
-                        skill={skill.name}
-                        percentage={skill.percentage}
-                    />
-                ))}
-            </div>
-        </div>
-    );
-}
-
 export function AsideSection() {
     return (
         <div className="aside-section">
@@ -75,8 +40,6 @@ export function AsideSection() {
             <p className="description">
                 {profileData.description}
             </p>
-
-            <SkillsSection skills={skills} />
         </div>
     );
 }

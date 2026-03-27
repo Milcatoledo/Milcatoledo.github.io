@@ -23,7 +23,7 @@
 }
 
 .project-card {
-    background: #ffffff98;
+    background: #1b28479d;
     border-radius: 18px;
     box-shadow: 0 4px 24px rgba(30, 34, 40, 0.10);
     padding: 28px 22px 22px 22px;
@@ -53,7 +53,7 @@
     z-index: 2;
 }
 .project-card p {
-    color: #232526;
+    color: #ffffff;
     margin: 0 0 6px 0;
     font-size: 1rem;
     line-height: 1.5;
