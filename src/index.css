@@ -13,6 +13,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -23,10 +27,9 @@ html {
 
 body {
   margin: 0;
-  min-width: 320px;
   min-height: 100vh;
-  width: 100%;
   padding-top: 60px;
+  overflow-x: hidden;
 }
 
 .home-container {

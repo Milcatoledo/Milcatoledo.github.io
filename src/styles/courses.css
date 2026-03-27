@@ -8,14 +8,13 @@
 }
 
 .certificate-card {
-    background: #fff;
+    background: #ffffff98;
     border-radius: 16px;
     box-shadow: 0 4px 24px rgba(30, 34, 40, 0.10);
     padding: 28px 24px;
     display: flex;
     flex-direction: row;
     gap: 32px;
-    border: 1.5px solid #e0e0e0;
     align-items: stretch;
     z-index: 1;
     margin-bottom: 24px;
@@ -43,7 +42,7 @@
     z-index: 2;
 }
 .certificate-link-btn {
-    color: #fff;
+    color: #ffffff;
     background: #f64e87;
     padding: 8px 20px;
     border-radius: 7px;
@@ -60,7 +59,6 @@
 }
 .certificate-link-btn:hover {
     background: #c13a6a;
-    color: #fffbe7;
 }
 
 .certificate-preview {
@@ -68,11 +66,8 @@
     min-width: 300px;
     max-width: 450px;
     height: 300px;
-    border: 1px solid #e0e0e0;
     border-radius: 10px;
-    background: #f7f7fa;
     object-fit: cover;
-    box-shadow: 0 2px 8px rgba(30, 34, 40, 0.07);
     margin-bottom: 0;
     flex-shrink: 0;
     align-self: center;

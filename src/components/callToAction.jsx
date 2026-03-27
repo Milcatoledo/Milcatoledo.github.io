@@ -11,7 +11,7 @@ export function CallToAction() {
                 <h1>¡Hola! Soy <span>Milca Toledo</span></h1>
                 <h2>Desarrolladora de Software | Frontend & Backend</h2>
                 <p>
-                    Transformo ideas en soluciones digitales atractivas y funcionales.
+                    Transformo ideas en soluciones digitales atractivas y funcionales, además puedo transformar digitalmente tu negocio.
                 </p>
                 <div className="redes">
                     {socialLinksData.map((socialLink) => (

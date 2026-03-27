@@ -9,14 +9,21 @@ export function ProjectsSection() {
         async function fetchRepos() {
             setLoading(true);
             setError(null);
+            
             try {
-                const token = import.meta.env.VITE_GITHUB_TOKEN;
-                if (!token) throw new Error("No se encontró el token de GitHub");
-                const headers = { Authorization: `token ${token}` };
-                const res = await fetch("https://api.github.com/user/repos?per_page=100", { headers });
-                if (!res.ok) throw new Error("Error al obtener los repositorios colaborativos y propios");
+                const user = "Milcatoledo";
+                const res = await fetch(`https://api.github.com/users/${user}/repos?type=all&per_page=100`);
+                
+                if (!res.ok) throw new Error("Error al obtener los repositorios de GitHub");
                 const data = await res.json();
-                const filtered = data.filter(repo => repo.owner?.login !== "Samuelbriones" && repo.owner?.login !== "ariannaf4" && repo.name !== "LandingPage");
+                
+                // Aplicamos los mismos filtros que ya tenías
+                const filtered = data.filter(repo => 
+                    repo.owner?.login !== "Samuelbriones" && 
+                    repo.owner?.login !== "ariannaf4" && 
+                    repo.name !== "LandingPage"
+                );
+                
                 setRepos(filtered);
             } catch (err) {
                 setError(err.message);
