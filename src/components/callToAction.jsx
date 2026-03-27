@@ -5,6 +5,8 @@ import { socialLinksData } from '../data/socialLinksData.jsx';
 export function CallToAction() {
     return (
         <section className="hero">
+            <img className="hero-media-bg" src="/images/fondo.png" alt="Fondo hero" />
+            <div className="hero-overlay"></div>
             <div className="hero-content">
                 <img src="/images/milca.png" alt="Milca Toledo" className="foto-perfil" />
                 <h1>¡Hola! Soy <span>Milca Toledo</span></h1>

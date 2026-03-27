@@ -14,12 +14,8 @@ function Home() {
     ];
     return (
         <div className="home-container">
-            <div className='navbar-container'>
-                <Navbar links={navLinks} />
-            </div>
-            <div className='call-to-action-container'>
-                <CallToAction />
-            </div>
+            <Navbar links={navLinks} />
+            <CallToAction />
             <span id="skills"></span>
             <div>
                 <div className="skills-section-container">
