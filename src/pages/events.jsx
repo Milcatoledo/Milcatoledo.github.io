@@ -1,4 +1,5 @@
 import { Navbar } from '../components/navbar.jsx'
+import { Footer } from '../components/footer.jsx'
 function Events() {
     const navLinks = [
         { name: "Home", path: "/" },
@@ -7,9 +8,14 @@ function Events() {
         { name: "Events", path: "/events" }
     ];
     return (
-        <div>
-            <Navbar links={navLinks} />
-            <h1>Events Page</h1>
+        <div className="home-container">
+            <div className="events-container">
+                <div className='navbar-container'>
+                    <Navbar links={navLinks} />
+                </div>
+                <h1>Eventos</h1>
+            </div>
+            <Footer />
         </div>
     )
 }

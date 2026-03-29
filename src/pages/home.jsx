@@ -4,7 +4,7 @@ import { SkillsSection } from '../components/skillsSection.jsx'
 import { Navbar } from '../components/navbar.jsx'
 import { CallToAction } from '../components/callToAction.jsx'
 import { AsideSection } from '../components/asideSection.jsx'
-
+import { Footer } from '../components/footer.jsx'
 
 function Home() {
     const navLinks = [
@@ -29,6 +29,11 @@ function Home() {
                     </div>
                 </div>
             </div>
+            <Footer 
+                extraText={
+                    <p>Fondo de CTA inspirado en <strong>Dancing Frogs</strong> by <em>Abi Toads</em></p>
+                } 
+            />
         </div>
     )
 }

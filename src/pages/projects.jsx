@@ -2,7 +2,7 @@
 import { Navbar } from '../components/navbar.jsx'
 import { ProjectsSection } from '../components/projectsSection.jsx';
 import '../styles/projects.css'
-
+import { Footer } from '../components/footer.jsx'
 function Projects() {
     const navLinks = [
         { name: "Home", path: "/" },
@@ -12,12 +12,15 @@ function Projects() {
     ];
 
     return (
-        <div className='project-container'>
-            <div className='navbar-container'>
-                <Navbar links={navLinks} />
+        <div className='home-container'>
+            <div className='project-container'>
+                <div className='navbar-container'>
+                    <Navbar links={navLinks} />
+                </div>
+                <h1>Mis proyectos</h1>
+                <ProjectsSection />
             </div>
-            <h1>Mis proyectos</h1>
-            <ProjectsSection />
+            <Footer />
         </div>
     )
 }

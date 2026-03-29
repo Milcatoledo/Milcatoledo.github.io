@@ -1,5 +1,3 @@
-
-
 export const socialLinksData = [
     {
         id: 'github',
