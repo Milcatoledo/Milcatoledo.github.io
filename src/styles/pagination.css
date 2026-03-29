@@ -1,0 +1,80 @@
+.pagination-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.pagination-control__btn,
+.pagination-control__page {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #e2e8f0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-weight: 600;
+}
+
+.pagination-control__btn:hover:not(:disabled),
+.pagination-control__page:hover:not(.pagination-control__page--active) {
+    background: rgba(246, 78, 135, 0.15);
+    border-color: #f64e87;
+    color: #f64e87;
+    transform: translateY(-3px);
+}
+
+.pagination-control__page--active {
+    background: #f64e87; 
+    border-color: #f64e87;
+    color: #ffffff;
+    pointer-events: none; /* No se puede clicar porque ya estás ahí */
+}
+
+/* Botones Desactivados*/
+.pagination-control__btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.pagination-control__meta {
+    color: #a0aec0;
+    font-size: 0.9rem;
+    margin-left: 20px; 
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+
+
+/* --- RESPONSIVE PARA MÓVILES --- */
+@media (max-width: 499px) {
+    .pagination-control {
+        gap: 5px;
+    }
+    
+    .pagination-control__btn,
+    .pagination-control__page {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .pagination-control__meta {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}

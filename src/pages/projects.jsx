@@ -3,6 +3,7 @@ import { Navbar } from '../components/navbar.jsx'
 import { ProjectsSection } from '../components/projectsSection.jsx';
 import '../styles/projects.css'
 import { Footer } from '../components/footer.jsx'
+import '../styles/Responsive/projects.css'
 function Projects() {
     const navLinks = [
         { name: "Home", path: "/" },

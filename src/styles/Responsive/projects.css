@@ -1,0 +1,164 @@
+/* ===== RESPONSIVE TABLETS (Menos de 768px) ===== */
+@media (max-width: 768px) {
+    .project-container h1 {
+        font-size: 2.2rem;
+        margin-bottom: 24px;
+        margin-top: 15px;
+    }
+
+    .project-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .table-responsive-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-top: 28px;
+    }
+    table {
+        min-width: 650px; 
+        margin-top: 0; 
+    }
+
+    th, td {
+        padding: 15px 18px;
+        font-size: 0.9rem; 
+    }
+
+    .more-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    /* 2. Ajustamos el Popup para que quepa bien en la tablet */
+    .popup-content {
+        width: 92%;
+        padding: 22px;
+        max-height: 85vh; /* Evita que se salga de la pantalla arriba o abajo */
+        overflow-y: auto; /* Le da una barra de scroll interno si hay muchísimos colaboradores */
+    }
+
+    .modal-header h3 {
+        font-size: 1.25rem;
+    }
+
+    .contributor-name {
+        font-size: 0.8rem;
+    }
+}
+
+/* ===== RESPONSIVE CELULARES (Menos de 699px) ===== */
+@media (max-width: 699px) {
+    .table-responsive-wrapper {
+        overflow-x: hidden !important;
+    }
+    
+    table {
+        min-width: 100% !important; 
+        display: table !important; 
+    }
+
+    th, td {
+        padding: 12px 6px; 
+        font-size: 0.8rem; 
+        word-break: break-word; 
+    }
+
+    .project-link-btn {
+        font-size: 1.1rem;
+        padding: 6px;
+    }
+
+    .more-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+        margin: 0 auto; 
+    }
+
+    .popup-content {
+        width: 95%;
+        padding: 20px;
+        max-height: 95vh;
+    }
+}
+
+
+/* ===== RESPONSIVE CELULARES SÚPER PEQUEÑOS (Menos de 499px) ===== */
+@media (max-width: 499px) {
+    .project-container h1 {
+        font-size: 1.8rem;
+    }
+
+    thead {
+        display: none !important;
+    }
+    table, tbody, tr, td {
+        display: block !important; 
+        width: 100%;
+    }
+
+    /* Cada fila es ahora una tarjeta */
+    tr {
+        margin-bottom: 20px;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(246, 78, 135, 0.2);
+        border-radius: 12px;
+        padding: 10px;
+    }
+
+    td {
+        text-align: right; /* Todo el texto a la derecha */
+        padding: 12px 10px !important;
+        position: relative;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Quitamos el borde a la última celda de cada tarjeta */
+    td:last-child {
+        border-bottom: none;
+    }
+
+    /* CSS MAGIA: Creamos títulos "falsos" a la izquierda de cada celda para saber qué es qué */
+    td::before {
+        position: absolute;
+        left: 10px;
+        top: 12px;
+        font-weight: 700;
+        color: #f64e87;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    td:nth-child(1)::before { content: "Nombre"; }
+    td:nth-child(2)::before { content: "Lenguaje"; }
+    td:nth-child(3)::before { content: "Enlace"; }
+    td:nth-child(4)::before { content: "Visualizar"; }
+
+    .more-btn {
+        margin: 0;
+        margin-left: auto; 
+    }
+
+    .popup-content {
+        width: 100vw;
+        height: 100vh;
+        max-height: 100vh;
+        border-radius: 0; 
+        border: none;
+        padding: 20px;
+    }
+    
+    .popup-overlay {
+        backdrop-filter: blur(20px);
+    }
+
+    .close-icon-btn {
+        font-size: 2.2rem;
+        padding: 5px;
+    }
+}

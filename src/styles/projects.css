@@ -1,12 +1,15 @@
 .project-container h1 {
-    font-size: 2.8rem;
+    font-size: 2rem;
     margin-bottom: 28px;
-    color: #ffffff;
+    color: rgb(230, 230, 230);
     text-align: center;
     width: 100%;
 }
 
 .project-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     padding-left: 40px;
     padding-right: 40px;
     box-sizing: border-box;
@@ -15,117 +18,235 @@
     margin: 0 auto;
 }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 32px;
-    margin-top: 32px;
-}
-
-.project-card {
-    background: #1b28479d;
-    border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(30, 34, 40, 0.10);
-    padding: 28px 22px 22px 22px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    transition: transform 0.16s, box-shadow 0.16s, border-color 0.16s;
-    min-height: 240px;
-    align-items: flex-start;
-    z-index: 1;
-    margin-bottom: 22px;
-}
-.project-card::before {
-    display: none;
-}
-.project-card:hover {
-    transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 12px 36px rgba(30, 34, 40, 0.13);
-    border-color: #f64e87;
-}
-.project-card h3 {
-    color: #f64e87;
-    margin: 0 0 8px 0;
-    font-size: 1.18rem;
-    font-weight: 700;
-    letter-spacing: 0.2px;
-    z-index: 2;
-}
-.project-card p {
+/* --- ESTILOS MODERNOS DE LA TABLA --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.03); /* Fondo oscuro semitransparente */
+    backdrop-filter: blur(12px); /* Efecto cristal para fondo borroso */
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 35px;
     color: #ffffff;
-    margin: 0 0 6px 0;
-    font-size: 1rem;
-    line-height: 1.5;
-    font-weight: 400;
-    z-index: 2;
+    margin-bottom: 35px;
 }
 
-.project-card a.project-link-btn {
-    color: #fff;
-    background: #f64e87;
-    padding: 8px 20px;
-    border-radius: 7px;
-    text-decoration: none;
-    align-self: flex-start;
+th, td {
+    padding: 10px 10px;
+    text-align: center;
+}
+
+th {
+    background: rgb(196, 66, 109); 
+    color: #fafafa;
     font-weight: 600;
-    font-size: 1rem;
-    box-shadow: 0 2px 8px rgba(246, 78, 135, 0.10);
-    transition: background 0.16s, color 0.16s;
-    margin-top: 10px;
-    letter-spacing: 0.2px;
-    z-index: 2;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: 2px solid rgba(246, 78, 135, 0.2); /* Separador fucsia */
+}
+
+tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    transition: background-color 0.3s ease;
+}
+
+tr:last-child {
+    border-bottom: none;
+}
+
+tr:hover {
+    background-color: rgba(246, 78, 176, 0.157); /* Se ilumina levemente de rosa */
+}
+
+.project-link-btn {
+    color: #a38c2f;
+    background: transparent;
+    font-size: 1.4rem;
+    padding: 10px;
+    border-radius: 50%;
+    transition: color 0.3s, transform 0.3s, background 0.3s;
+    display: inline-flex;
+    box-shadow: none;
+}
+
+.project-link-btn:hover {
+    color: #fff;
+    transform: translateY(-3px);
+    background: #f64e87;
+}
+
+.more-btn {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50%; /* Lo hace un círculo perfecto */
+    color: #d97e16;
+    font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.more-btn:hover {
+    background: #f64e87;
+    border-color: #f64e87;
+    color: #fff;
+    transform: rotate(90deg) scale(1.1); /* Anima rotando sutilmente */
+    box-shadow: 0 4px 15px rgba(246, 78, 135, 0.4);
+}
+
+/* --- ESTILOS INTERNOS DEL POPUP --- */
+.popup-overlay {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.379);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.popup-content {
+    background: rgba(0, 0, 0, 0.379);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    padding: 25px;  
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    border: 1px solid rgba(246, 78, 135, 0.3); 
+    position: relative;
+    color: #e2e8f0;
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px) scale(0.95); opacity: 0; }
+    to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* 1. Cabecera (Título y botón en misma línea) */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 15px;
+}
+
+.modal-header h3 {
+    color: #f64e87;
+    font-size: 1.4rem;
+    margin: 0; 
+    font-weight: 700;
+}
+
+.close-icon-btn {
+    background: transparent;
     border: none;
-}
-.project-card a.project-link-btn:hover {
-    background: #c13a6a;
-    color: #fffbe7;
-}
-
-/* ===== RESPONSIVE MOBILE ===== */
-@media (max-width: 768px) {
-    .project-container h1 {
-        font-size: 2.2rem;
-        margin-bottom: 24px;
-        margin-top: 15px;
-    }
-
-    .project-container {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        margin-top: 24px;
-    }
-
-    .project-card {
-        padding: 22px 18px 20px 18px;
-        min-height: auto;
-    }
-
-    .project-card h3 {
-        font-size: 1.15rem;
-        word-break: break-word;
-    }
-
-    .project-card p {
-        font-size: 0.95rem;
-        word-break: break-word;
-    }
+    color: #5e1414;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+    padding: 0 5px;
 }
 
-@media (max-width: 480px) {
-    .project-container h1 {
-        font-size: 1.8rem;
-    }
-    .project-container {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    .project-card {
-        padding: 20px 16px 18px 16px;
-    }
+.close-icon-btn:hover {
+    color: #f64e4e;
+}
+
+/* 2. Caja de la Descripción con detalle fucsia a la izquierda */
+.modal-body-desc {
+    background: rgba(255, 255, 255, 0.03); 
+    border-left: 3px solid #f64e87;
+    padding: 12px 18px;
+    border-radius: 0 8px 8px 0; /* Solo curveado de la derecha */
+    margin-bottom: 20px;
+}
+
+.modal-body-desc p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+}
+
+/* 3. Dueño del Repositorio */
+.modal-meta p {
+    font-size: 0.95rem;
+    margin: 0 0 20px 0;
+}
+
+.modal-meta b {
+    color: #ffffff;
+}
+
+/* 4. Colaboradores*/
+.modal-contributors-section p {
+    margin: 0 0 12px 0;
+}
+
+.contributors-list {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 12px;
+}
+
+/* Tarjeta individual de cada colaborador*/
+.contributor-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 6px 14px 6px 6px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contributor-card:hover {
+    background: rgba(246, 78, 135, 0.1);
+    border-color: #f64e87;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(246, 78, 135, 0.3);
+}
+
+/* La fotito en sí */
+.contributor-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%; /* Círculo perfecto */
+    object-fit: cover;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.contributor-name {
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.loading-text {
+    font-size: 0.9rem;
+    color: #a0aec0;
+    font-style: italic;
 }
