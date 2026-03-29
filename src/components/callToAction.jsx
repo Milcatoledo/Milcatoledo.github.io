@@ -26,7 +26,7 @@ export function CallToAction() {
                 </div>
                 <div className="botones-cta">
                     <a href="#skills" className="btn-primario">Conóceme más</a>
-                    <a href="mailto:toledmil@gmail.com" className="btn-secundario">Hablemos</a>
+                    <a href="mailto:mtoledom09@gmail.com" className="btn-secundario">Hablemos</a>
                 </div>
             </div>
         </section>

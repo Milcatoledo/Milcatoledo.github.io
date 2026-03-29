@@ -47,6 +47,25 @@ h2{
   text-align: center;
 }
 
+/*LOADER*/
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+.loader-video {
+  width: 300px;
+}
+
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
