@@ -22,7 +22,7 @@
 table {
     width: 100%;
     border-collapse: collapse;
-    background: rgba(255, 255, 255, 0.03); /* Fondo oscuro semitransparente */
+    background: rgba(46, 45, 52, 0.351); /* Fondo oscuro semitransparente */
     backdrop-filter: blur(12px); /* Efecto cristal para fondo borroso */
     -webkit-backdrop-filter: blur(12px);
     border-radius: 16px;

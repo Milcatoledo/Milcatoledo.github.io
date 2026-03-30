@@ -1,14 +1,22 @@
+import { useState } from 'react';
 import '../styles/courses.css';
 import { Navbar } from '../components/navbar.jsx';
 import { certificates } from '../data/certificatesData.jsx';
 import { Footer } from '../components/footer.jsx';
+
 function Courses() {
+    const [selectedImage, setSelectedImage] = useState(null);
+
     const navLinks = [
         { name: "Home", path: "/" },
         { name: "Projects", path: "/projects" },
         { name: "Courses", path: "/courses" },
         { name: "Events", path: "/events" }
     ];
+
+    const openModal = (imageStr) => setSelectedImage(imageStr);
+    const closeModal = () => setSelectedImage(null);
+
     return (
         <div className="home-container">
             <div className="courses-container">
@@ -16,36 +24,30 @@ function Courses() {
                     <Navbar links={navLinks} />
                 </div>
                 <h1>Mis Certificados</h1>
-                <div className="certificates-grid">
+                <div className="certificates-list">
                     {certificates.map((cert, idx) => {
-                        // Si el link es de Google Drive, obtener el ID para previsualizar
-                        let previewUrl = null;
-                        const match = cert.link.match(/\/d\/([\w-]+)/);
-                        if (match) {
-                            previewUrl = `https://drive.google.com/file/d/${match[1]}/preview`;
-                        }
                         return (
                             <div className="certificate-card" key={idx}>
-                                {previewUrl && (
-                                    <iframe
-                                        className="certificate-preview"
-                                        src={previewUrl}
-                                        allow="autoplay"
-                                        title={cert.title}
-                                    />
-                                )}
-                                <div className="certificate-card-content">
-                                    <h3>{cert.title}</h3>
-                                    <p>{cert.description}</p>
-                                    <a href={cert.link} target="_blank" rel="noopener noreferrer" className="certificate-link-btn">
-                                        Ver certificado
-                                    </a>
-                                </div>
+                                <h3>{cert.title}</h3>
+                                <p>{cert.description}</p>
+                                <button onClick={() => openModal(cert.image)} className="certificate-link-btn">
+                                    Ver certificado
+                                </button>
                             </div>
                         );
                     })}
                 </div>
             </div>
+
+            {/* Modal for viewing certificate image */}
+            {selectedImage && (
+                <div className="modal-overlay" onClick={closeModal}>
+                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                        <img src={selectedImage} alt="Certificado ampliado" className="modal-image" />
+                    </div>
+                </div>
+            )}
+
             <Footer />
         </div>
     );
