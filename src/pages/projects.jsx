@@ -8,8 +8,7 @@ function Projects() {
     const navLinks = [
         { name: "Home", path: "/" },
         { name: "Projects", path: "/projects" },
-        { name: "Courses", path: "/courses" },
-        { name: "Events", path: "/events" }
+        { name: "Courses", path: "/courses" }
     ];
 
     return (

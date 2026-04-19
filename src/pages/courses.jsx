@@ -10,8 +10,7 @@ function Courses() {
     const navLinks = [
         { name: "Home", path: "/" },
         { name: "Projects", path: "/projects" },
-        { name: "Courses", path: "/courses" },
-        { name: "Events", path: "/events" }
+        { name: "Courses", path: "/courses" }
     ];
 
     const openModal = (imageStr) => setSelectedImage(imageStr);
@@ -29,6 +28,7 @@ function Courses() {
                         return (
                             <div className="certificate-card" key={idx}>
                                 <h3>{cert.title}</h3>
+                                {cert.date && <p className="certificate-date"><strong>Fecha de obtención:</strong> {cert.date}</p>}
                                 <p>{cert.description}</p>
                                 <button onClick={() => openModal(cert.image)} className="certificate-link-btn">
                                     Ver certificado
